@@ -4,8 +4,7 @@
     <!--Main screen-->
     <dimen name="top_height">360dp</dimen>
     <dimen name="bottom_height">64dp</dimen>
-    <dimen name="text_margin_start">18dp</dimen>
-    <dimen name="text_margin_other">12dp</dimen>
+    <dimen name="text_margin">12dp</dimen>
     <dimen name="button_margin">12dp</dimen>
     <dimen name="menu_container_margin">40dp</dimen>
     <dimen name="menu_container_margin_start">30dp</dimen>
