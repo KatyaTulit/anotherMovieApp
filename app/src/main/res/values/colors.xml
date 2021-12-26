@@ -14,6 +14,5 @@
     <color name="main_screen_autolink">@color/color_secondary_variant</color>
     <color name="main_screen_disclaimer_text">@color/greyish</color>
     <color name="main_screen_bottom">@color/color_primary</color>
-    <color name="main_screen_button">@color/color_primary</color>
     <color name="main_screen_text">@color/white</color>
 </resources>
