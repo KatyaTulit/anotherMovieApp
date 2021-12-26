@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">MovieApp</string>
+
+    <!--Main screen-->
+    <string name="main_menu">Меню</string>
+    <string name="main_favourites">Избранное</string>
+    <string name="main_watch_later">Посмотреть позже</string>
+    <string name="main_movie_lists">Подборки</string>
+    <string name="main_settings">Настройки</string>
+    <string name="main_disclaimer">Постеры предоставлены movieposters.com</string>
+
+    <string name="poster_amelie">Amelie</string>
+    <string name="poster_french_dispatch">French Dispatch</string>
+    <string name="poster_groundhog_day">Groundhog Day</string>
+    <string name="poster_mission_impossible">Mission Impossible</string>
 </resources>

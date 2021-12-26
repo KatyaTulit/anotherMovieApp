@@ -2,39 +2,145 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/main_screen_background"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <FrameLayout
-        android:id="@+id/top_menu"
+    <LinearLayout
+        android:id="@+id/posters_container"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="#03A9F4"
+        android:orientation="horizontal"
+        android:layout_height="@dimen/top_height"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent">
-    </FrameLayout>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:scaleType="centerCrop"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/poster_amelie"
+            android:contentDescription="@string/poster_amelie" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:scaleType="centerCrop"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/poster_french_dispatch"
+            android:contentDescription="@string/poster_french_dispatch" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:scaleType="centerCrop"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/poster_groundhog_day"
+            android:contentDescription="@string/poster_groundhog_day"/>
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:scaleType="centerCrop"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/poster_mission_impossible"
+            android:contentDescription="@string/poster_mission_impossible"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/buttons_container"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintHeight_default="spread"
+        android:layout_height="wrap_content"
         app:layout_constraintWidth_default="spread"
         android:orientation="vertical"
-        android:layout_margin="40dp"
-        android:background="#FF9800"
-        app:layout_constraintTop_toBottomOf="@id/top_menu"
-        app:layout_constraintBottom_toTopOf="@id/bottom_menu"
+        android:layout_marginStart="@dimen/menu_container_margin_start"
+        android:layout_marginEnd="@dimen/menu_container_margin"
+        android:layout_marginTop="@dimen/menu_container_margin"
+        android:layout_marginBottom="@dimen/menu_container_margin"
+        app:layout_constraintTop_toBottomOf="@id/posters_container"
+        app:layout_constraintBottom_toTopOf="@id/bottom_container"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/button_menu"
+            android:layout_marginStart="@dimen/button_margin"
+            android:layout_marginEnd="@dimen/button_margin"
+            android:layout_marginTop="@dimen/button_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/main_screen_button"
+            android:text="@string/main_menu" />
+
+        <Button
+            android:id="@+id/button_fav"
+            android:layout_marginStart="@dimen/button_margin"
+            android:layout_marginEnd="@dimen/button_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/main_screen_button"
+            android:text="@string/main_favourites" />
+
+        <Button
+            android:id="@+id/button_later"
+            android:layout_marginStart="@dimen/button_margin"
+            android:layout_marginEnd="@dimen/button_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/main_screen_button"
+            android:text="@string/main_watch_later" />
+
+        <Button
+            android:id="@+id/button_selections"
+            android:layout_marginStart="@dimen/button_margin"
+            android:layout_marginEnd="@dimen/button_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/main_screen_button"
+            android:text="@string/main_movie_lists" />
+
+        <Button
+            android:id="@+id/button_settings"
+            android:layout_marginStart="@dimen/button_margin"
+            android:layout_marginEnd="@dimen/button_margin"
+            android:layout_marginBottom="@dimen/button_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/main_screen_button"
+            android:text="@string/main_settings" />
+
+
     </LinearLayout>
 
     <FrameLayout
-        android:id="@+id/bottom_menu"
+        android:id="@+id/bottom_container"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="#E91E63"
+        android:layout_height="@dimen/bottom_height"
+        android:background="@color/main_screen_bottom"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/text_disclaimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:textStyle="italic"
+            android:layout_marginEnd="@dimen/text_margin_other"
+            android:layout_marginTop="@dimen/text_margin_other"
+            android:layout_marginStart="@dimen/text_margin_start"
+            android:text="@string/main_disclaimer"
+            android:textColor="@color/white"
+            android:textColorLink="@color/color_primary_variant"
+            android:autoLink="web"
+            android:linksClickable="true"
+            android:layout_gravity="top"
+            app:layout_constraintStart_toStartOf="parent" />
+
     </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
