@@ -108,14 +108,9 @@
             android:id="@+id/text_disclaimer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:maxLines="2"
-            android:textStyle="italic"
             android:layout_margin="@dimen/text_margin"
             android:text="@string/main_disclaimer"
-            android:textColor="@color/main_screen_disclaimer_text"
-            android:textColorLink="@color/color_primary_variant"
-            android:autoLink="web"
-            android:linksClickable="true"
+            android:theme="@style/Footnote"
             android:layout_gravity="bottom|end"
             app:layout_constraintStart_toStartOf="parent" />
 
