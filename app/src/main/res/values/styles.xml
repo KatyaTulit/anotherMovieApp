@@ -3,7 +3,7 @@
     <style name="Footnote">
         <item name="android:maxLines">2</item>
         <item name="android:textStyle">italic</item>
-        <item name="android:textColor">@color/main_screen_disclaimer_text</item>
+        <item name="android:textColor">@color/color_primary</item>
         <item name="android:textColorLink">@color/color_primary_variant</item>
         <item name="android:autoLink">web</item>
         <item name="android:linksClickable">true</item>
