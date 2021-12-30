@@ -14,19 +14,29 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        initButtons() // show toast messages when buttons are pressed
+        initNavigation() // show toast messages when menu and navigation items are pressed
     }
 
-    private fun initButtons() {
-        val buttons = listOf(binding.buttonMenu,
-                            binding.buttonFav,
-                            binding.buttonLater,
-                            binding.buttonSelections,
-                            binding.buttonSettings)
+    private fun initNavigation() {
 
-        buttons.forEach { button ->
-            button.setOnClickListener {
-                Toast.makeText(this, button.text.toString(), Toast.LENGTH_SHORT).show()
+        binding.topAppBar.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.settings -> {
+                    Toast.makeText(this, it.title, Toast.LENGTH_SHORT).show()
+                    true
+                }
+                else -> false
+            }
+        }
+
+        binding.bottomNavigation.setOnItemSelectedListener () {
+
+            when (it.itemId) {
+                R.id.favorites, R.id.watch_later, R.id.selections -> {
+                    Toast.makeText(this, it.title, Toast.LENGTH_SHORT).show()
+                    true
+                }
+                else -> false
             }
         }
     }

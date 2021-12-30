@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Footnote">
+        <item name="android:maxLines">2</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:autoLink">web</item>
+        <item name="android:linksClickable">true</item>
+    </style>
+</resources>

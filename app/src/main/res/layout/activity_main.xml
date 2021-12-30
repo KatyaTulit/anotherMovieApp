@@ -5,12 +5,29 @@
     android:background="@drawable/main_screen_background"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/main_toolbar"
+            app:navigationIcon="@drawable/ic_baseline_menu_24"
+            app:menu="@menu/toolbar_menu"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
     <LinearLayout
         android:id="@+id/posters_container"
         android:layout_width="match_parent"
         android:orientation="horizontal"
         android:layout_height="@dimen/top_height"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_bar_layout"
         app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
@@ -51,94 +68,37 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/buttons_container"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintWidth_default="spread"
-        android:orientation="vertical"
-        android:layout_marginStart="@dimen/menu_container_margin_start"
-        android:layout_marginEnd="@dimen/menu_container_margin"
-        android:layout_marginTop="@dimen/menu_container_margin"
-        android:layout_marginBottom="@dimen/menu_container_margin"
-        app:layout_constraintTop_toBottomOf="@id/posters_container"
-        app:layout_constraintBottom_toTopOf="@id/bottom_container"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <Button
-            android:id="@+id/button_menu"
-            android:layout_marginStart="@dimen/button_margin"
-            android:layout_marginEnd="@dimen/button_margin"
-            android:layout_marginTop="@dimen/button_margin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/main_screen_button"
-            android:text="@string/main_menu" />
-
-        <Button
-            android:id="@+id/button_fav"
-            android:layout_marginStart="@dimen/button_margin"
-            android:layout_marginEnd="@dimen/button_margin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/main_screen_button"
-            android:text="@string/main_favourites" />
-
-        <Button
-            android:id="@+id/button_later"
-            android:layout_marginStart="@dimen/button_margin"
-            android:layout_marginEnd="@dimen/button_margin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/main_screen_button"
-            android:text="@string/main_watch_later" />
-
-        <Button
-            android:id="@+id/button_selections"
-            android:layout_marginStart="@dimen/button_margin"
-            android:layout_marginEnd="@dimen/button_margin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/main_screen_button"
-            android:text="@string/main_movie_lists" />
-
-        <Button
-            android:id="@+id/button_settings"
-            android:layout_marginStart="@dimen/button_margin"
-            android:layout_marginEnd="@dimen/button_margin"
-            android:layout_marginBottom="@dimen/button_margin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/main_screen_button"
-            android:text="@string/main_settings" />
-
-
-    </LinearLayout>
-
     <FrameLayout
         android:id="@+id/bottom_container"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/bottom_height"
-        android:background="@color/main_screen_bottom"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/posters_container"
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/text_disclaimer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:maxLines="2"
-            android:textStyle="italic"
-            android:layout_margin="@dimen/text_margin"
+            android:layout_marginTop="@dimen/text_margin_top"
+            android:layout_marginBottom="@dimen/text_margin"
+            android:layout_marginStart="@dimen/text_margin"
+            android:layout_marginEnd="@dimen/text_margin"
             android:text="@string/main_disclaimer"
-            android:textColor="@color/main_screen_disclaimer_text"
-            android:textColorLink="@color/color_primary_variant"
-            android:autoLink="web"
-            android:linksClickable="true"
+            android:theme="@style/Footnote"
             android:layout_gravity="bottom|end"
             app:layout_constraintStart_toStartOf="parent" />
 
     </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:itemTextColor="@android:color/white"
+        app:itemIconTint="@android:color/white"
+        app:labelVisibilityMode="labeled"
+        style="@style/Widget.MaterialComponents.Toolbar.Primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/navigation_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

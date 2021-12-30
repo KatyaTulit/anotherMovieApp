@@ -2,6 +2,7 @@
     <string name="app_name">MovieApp</string>
 
     <!--Main screen-->
+    <string name="main_toolbar">Search it</string>
     <string name="main_menu">Меню</string>
     <string name="main_favourites">Избранное</string>
     <string name="main_watch_later">Посмотреть позже</string>
