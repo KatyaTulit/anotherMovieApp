@@ -2,7 +2,7 @@
 <resources>
 
     <!--Main screen-->
-    <dimen name="top_height">360dp</dimen>
+    <dimen name="top_height">240dp</dimen>
     <dimen name="bottom_height">64dp</dimen>
     <dimen name="text_margin">12dp</dimen>
     <dimen name="text_margin_top">6dp</dimen>
