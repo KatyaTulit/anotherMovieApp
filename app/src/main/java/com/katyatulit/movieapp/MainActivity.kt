@@ -1,9 +1,11 @@
 package com.katyatulit.movieapp
 
+import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.os.Bundle
 import android.view.View
 import android.view.animation.AnimationUtils
+import android.view.animation.BounceInterpolator
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.katyatulit.movieapp.databinding.ActivityMainBinding
@@ -52,6 +54,21 @@ class MainActivity : AppCompatActivity() {
             val animatorPoster3 = ObjectAnimator.ofFloat(it, View.ROTATION, 0F, 360F)
             animatorPoster3.duration = 500
             animatorPoster3.start()
+        }
+
+        binding.poster4.setOnClickListener {
+
+            val animation1 = ObjectAnimator.ofFloat(it, View.ALPHA, 0F, 1F)
+            animation1.interpolator = BounceInterpolator()
+            animation1.duration = 1000
+
+            val animation2 = ObjectAnimator.ofFloat(it, View.ROTATION, 0F, 360F)
+            animation2.duration = 500
+
+            val animatorSet = AnimatorSet()
+            animatorSet.play(animation1)
+            animatorSet.play(animation2).after(1000)
+            animatorSet.start()
         }
 
     }
