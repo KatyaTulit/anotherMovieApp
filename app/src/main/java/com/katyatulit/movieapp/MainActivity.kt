@@ -1,6 +1,7 @@
 package com.katyatulit.movieapp
 
 import android.os.Bundle
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.katyatulit.movieapp.databinding.ActivityMainBinding
@@ -39,5 +40,11 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
+
+        val animationPoster2 = AnimationUtils.loadAnimation(this, R.anim.poster_animation)
+        binding.poster2.setOnClickListener {
+            it.startAnimation(animationPoster2)
+        }
+
     }
 }
