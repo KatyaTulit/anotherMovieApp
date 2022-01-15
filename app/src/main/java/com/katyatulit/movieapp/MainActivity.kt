@@ -1,6 +1,8 @@
 package com.katyatulit.movieapp
 
+import android.animation.ObjectAnimator
 import android.os.Bundle
+import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -44,6 +46,12 @@ class MainActivity : AppCompatActivity() {
         val animationPoster2 = AnimationUtils.loadAnimation(this, R.anim.poster_animation)
         binding.poster2.setOnClickListener {
             it.startAnimation(animationPoster2)
+        }
+
+        binding.poster3.setOnClickListener {
+            val animatorPoster3 = ObjectAnimator.ofFloat(it, View.ROTATION, 0F, 360F)
+            animatorPoster3.duration = 500
+            animatorPoster3.start()
         }
 
     }
