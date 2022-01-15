@@ -109,6 +109,7 @@
             android:layout_height="150dp"
             android:clickable="true"
             android:focusable="true"
+            android:stateListAnimator="@animator/poster1_press_animator"
             app:cardCornerRadius="15dp">
 
             <ImageView
